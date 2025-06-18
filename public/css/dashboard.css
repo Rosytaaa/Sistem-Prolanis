@@ -1,0 +1,64 @@
+body{
+        background-color: #b81e1e;
+    }
+        .sidebar {
+            width: 280px;
+            height: 100vh;
+            background: #f8f9fa;
+            padding: 15px;
+        }
+        .nav-link {
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .nav-link:hover {
+            background: #e9ecef;
+        }
+        .submenu {
+            padding-left: 30px;
+            display: none;
+        }
+        .submenu .nav-link {
+            background: none;
+            color: #333;
+            font-size: 14px;
+        }
+        .submenu .nav-link:hover {
+            background: #f1f1f1;
+        }
+        .brand-text {
+            color: black !important;
+            text-decoration: none;
+        }
+        .sidebar img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding-right: 10px; /* Sesuaikan nilai ini untuk menggeser ke kanan */
+        }
+        .brand-text {
+            margin-left: 28px;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        .dropdown {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            bottom: 20px; /* Jarak dari bawah */
+            left: 15px; /* Jarak dari kiri */
+            width: 100%; /* Pastikan dropdown tetap berada di dalam sidebar */
+        }
+
+        .dropdown a {
+            display: flex;
+            align-items: center;
+            color: #000; /* Warna teks default */
+            text-decoration: none;
+        }
+
+        .dropdown img {
+            margin-right: 10px; /* Beri jarak antara gambar dan teks */
+        }
