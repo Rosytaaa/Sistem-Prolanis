@@ -174,7 +174,9 @@
                 </form>
             </div>
             <div class="pb-3">
+                @if(!in_array(auth()->user()->role, ['pimpinan']))
                 <a href="{{ route('jadwalkunjungan.create') }}" class="btn btn-primary">+ Tambah Data</a>
+                @endif
             </div>
 
             <table class="table table-striped">

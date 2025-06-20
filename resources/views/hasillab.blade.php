@@ -194,7 +194,9 @@
                 </div>
                 <div class="d-flex justify-content-between align-items-center mt-5 mb-2">
                     <div>
+                        @if(!in_array(auth()->user()->role, ['pimpinan']))
                         <a href='/createhasillab' class="btn btn-primary">+ Tambah Data</a>
+                        @endif
                     </div>
                     <div>
                         @if(!in_array(auth()->user()->role, ['perawat']))
@@ -203,9 +205,11 @@
                         </a>
                         @endif
 
+                        @if(!in_array(auth()->user()->role, ['pimpinan']))
                         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#importModal">
                             <i class="fa-solid fa-download me-2"></i>Import
                         </button>
+                        @endif
                     </div>
                 </div>
 
