@@ -30,12 +30,7 @@ class JadwalController extends Controller
 
         // Filter berdasarkan keterangan
         if ($request->filled('keterangan')) {
-            $keterangan = explode(',', $request->keterangan);
-            $query->where(function($q) use ($keterangan) {
-                foreach ($keterangan as $ket) {
-                    $q->orWhere('keterangan', 'like', "%" . trim($ket) . "%");
-                }
-            });
+            $query->where('keterangan', 'like', '%' . $request->keterangan . '%');
         }
 
         $data = $query->paginate($barisdata);

@@ -24,19 +24,15 @@ class PasienController extends Controller
         if (strlen($katakunci)) {
             $query->where(function($q) use ($katakunci) {
                 $q->where('no_bpjs', 'like', "%$katakunci%")
-                ->orWhere('nama', 'like', "%$katakunci%");
+                ->orWhere('nama', 'like', "%$katakunci%")
+                ->orWhere('alamat', 'like', "%$katakunci%");
             });
         } else {
             $query->orderBy('created_at', 'desc');
         }
 
         if ($request->filled('keterangan')) {
-            $keterangan = explode(',', $request->keterangan);
-            $query->where(function($q) use ($keterangan) {
-                foreach ($keterangan as $ket) {
-                    $q->orWhere('keterangan', 'like', "%" . trim($ket) . "%");
-                }
-            });
+            $query->where('keterangan', 'like', '%' . $request->keterangan . '%');
         }
 
         $data = $query->paginate($barisdata);
