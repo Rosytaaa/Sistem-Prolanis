@@ -2,7 +2,7 @@
 
 namespace App\Imports;
 
-use App\Models\Pasien;
+use App\Models\pasien;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use PhpOffice\PhpSpreadsheet\Shared\Date as ExcelDate;
@@ -28,7 +28,7 @@ class PasienImport implements ToModel, WithHeadingRow
         $validGenders = ['Laki-laki', 'Perempuan'];
         $jenisKelamin = in_array($row['jenis_kelamin'], $validGenders) ? $row['jenis_kelamin'] : null;
 
-        return new Pasien([
+        return new pasien([
             'no_bpjs'        => $row['no_bpjs'],
             'nama'           => $row['nama'],
             'jenis_kelamin'  => $jenisKelamin,

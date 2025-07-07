@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\Models\Pasien;
+use App\Models\pasien;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
@@ -14,7 +14,7 @@ class PasienExport implements FromCollection, WithHeadings, WithMapping, ShouldA
 {
     public function collection()
     {
-        return Pasien::select(
+        return pasien::select(
             'no_bpjs', 'nama', 'jenis_kelamin', 'tanggal_lahir',
             'keterangan', 'no_telepon', 'alamat'
         )->get();
